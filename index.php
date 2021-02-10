@@ -144,18 +144,16 @@ echo $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)] . $lotyniskosRaides[rand
 
 <?php
 
-$string11A = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
-$string11B = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
-$jointString = $string11A . ' ' . $string11B;
+$jointString = $string9 . ' ' . $string91;
 $jointString11 = explode(' ', $jointString);
 $jointString11LengthMinusOne = count($jointString11) - 1;
-
-// for ($i = 0; $i < 10; $i++) {
-//     echo $jointString11[rand(0, $jointString11LengthMinusOne)] . ' ';     
-// }
-// echo '<br>';
-
-$word1 = $jointString11[rand(0, $jointString11LengthMinusOne)] . ' ';
-$word2 = '$word1';
-$word3 = 'word2';
-echo $$word3;
+$array11 = array();
+while (count($array11) < 10) {
+    $word = $jointString11[rand(0, $jointString11LengthMinusOne)];
+    if (!in_array($word, $array11)) {
+        array_push($array11, $word);
+    }    
+}
+foreach ($array11 as $value) {
+    echo $value . ' ';
+}
