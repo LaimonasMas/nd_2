@@ -4,10 +4,12 @@
 
 $name = 'Johnny';
 $surname = 'Depp';
-if (strlen($name) > strlen($surname)){
-echo $name;
+if (strlen($name) > strlen($surname)) {
+    echo $surname;
+} else if (strlen($name) < strlen($surname)) {
+    echo $name;
 } else {
-echo $surname;
+    echo 'vardas ir pavarde po lygiai simboliu';
 }
 ?>
 
@@ -30,7 +32,7 @@ echo '<br>';
 
 $name3 = 'Reese';
 $surname3 = 'Witherspoon';
-$initials = $name3[0].$surname3[0];
+$initials = $name3[0] . $surname3[0];
 echo $initials;
 echo '<br>';
 ?>
@@ -41,9 +43,7 @@ echo '<br>';
 
 $name4 = 'Emma';
 $surname4 = 'Watson';
-$name4Length = strlen($name4);
-$surname4Length = strlen($surname4);
-$initialsOfLastLetters = $name4[strlen($name4) - 1] . $surname4[strlen($surname4) - 1];
+$initialsOfLastLetters = substr($name4, -3) . substr($surname4, -3);
 echo strtoupper($initialsOfLastLetters);
 echo '<br>';
 ?>
@@ -96,24 +96,66 @@ echo '<br>';
 
 <?php
 
-$string8 = 'Star Wars: Episode '.str_repeat(' ', rand(0,5)). rand(1,9) . ' - A New Hope';
+$string8 = 'Star Wars: Episode ' . str_repeat(' ', rand(0, 5)) . rand(1, 9) . ' - A New Hope';
 echo $string8;
 echo '<br>';
+$string8 = str_ireplace("Star Wars: Episode ", "", $string8);
+$string8 = str_ireplace(" - A New Hope", "", $string8);
+echo '<br>';
+echo $string8;
+echo '<br>';
+?>
 
+<h2>ND nr.9</h2>
 
+<?php
 
+$string9 = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
+$string91 = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
+$newString = explode(' ', $string9);
+$newString2 = explode(' ', $string91);
+$count = 0;
+for ($i = 0; $i < count($newString); $i++) {
+    if (mb_strlen($newString[$i]) <= 5) {
+        $count++;
+    }
+}
+echo $count;
+echo '<br>';
+$count2 = 0;
+for ($i = 0; $i < count($newString2); $i++) {
+    if (mb_strlen($newString2[$i]) <= 5) {
+        $count2++;
+    }
+}
+echo $count2;
+?>
 
+<h2>ND nr.10</h2>
 
+<?php
 
+$lotyniskosRaides = 'qwertyuiopasdfghjklzxcvbnm';
+$lotyniskosRaidesIlgis = strlen($lotyniskosRaides) - 1;
+echo $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)] . $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)] . $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)];;
+?>
 
+<h2>ND nr.11</h2>
 
+<?php
 
+$string11A = "Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
+$string11B = "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
+$jointString = $string11A . ' ' . $string11B;
+$jointString11 = explode(' ', $jointString);
+$jointString11LengthMinusOne = count($jointString11) - 1;
 
+// for ($i = 0; $i < 10; $i++) {
+//     echo $jointString11[rand(0, $jointString11LengthMinusOne)] . ' ';     
+// }
+// echo '<br>';
 
-
-
-
-
-
-
-
+$word1 = $jointString11[rand(0, $jointString11LengthMinusOne)] . ' ';
+$word2 = '$word1';
+$word3 = 'word2';
+echo $$word3;
