@@ -23,7 +23,6 @@ echo '<br>';
 echo strtoupper($name2);
 echo '<br>';
 echo strtolower($surname2);
-echo '<br>';
 ?>
 
 <h2>ND nr.3</h2>
@@ -34,7 +33,6 @@ $name3 = 'Reese';
 $surname3 = 'Witherspoon';
 $initials = $name3[0] . $surname3[0];
 echo $initials;
-echo '<br>';
 ?>
 
 <h2>ND nr.4</h2>
@@ -45,7 +43,6 @@ $name4 = 'Emma';
 $surname4 = 'Watson';
 $initialsOfLastLetters = substr($name4, -3) . substr($surname4, -3);
 echo strtoupper($initialsOfLastLetters);
-echo '<br>';
 ?>
 
 <h2>ND nr.5</h2>
@@ -54,7 +51,6 @@ echo '<br>';
 
 $string = 'An American in Paris';
 echo str_ireplace("a", "*", $string);
-echo '<br>';
 ?>
 
 <h2>ND nr.6</h2>
@@ -62,11 +58,12 @@ echo '<br>';
 <?php
 
 $string = 'An American in Paris';
+echo $string;
+echo '<br>';
 $lowercaseA = substr_count($string, 'a');
 $uppercaseA = substr_count($string, 'A');
 $totalNumberOfLetterA = $lowercaseA + $uppercaseA;
 echo $totalNumberOfLetterA;
-echo '<br>';
 ?>
 
 <h2>ND nr.7</h2>
@@ -77,7 +74,7 @@ $string1 = 'An American in Paris';
 $string2 = "Breakfast at Tiffany's";
 $string3 = '2001: A Space Odyssey';
 $string4 = "It's a Wonderful Life";
-$vowels = array("a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y");
+$vowels = array("a", "e", "i", "o", "u", "w", "y", "A", "E", "I", "O", "U", "W", "Y");
 $noVowels1 = str_replace($vowels, "", $string1);
 $noVowels2 = str_replace($vowels, "", $string2);
 $noVowels3 = str_replace($vowels, "", $string3);
@@ -89,7 +86,6 @@ echo '<br>';
 echo $noVowels3;
 echo '<br>';
 echo $noVowels4;
-echo '<br>';
 ?>
 
 <h2>ND nr.8</h2>
@@ -101,9 +97,7 @@ echo $string8;
 echo '<br>';
 $string8 = str_ireplace("Star Wars: Episode ", "", $string8);
 $string8 = str_ireplace(" - A New Hope", "", $string8);
-echo '<br>';
 echo $string8;
-echo '<br>';
 ?>
 
 <h2>ND nr.9</h2>
@@ -137,7 +131,7 @@ echo $count2;
 
 $lotyniskosRaides = 'qwertyuiopasdfghjklzxcvbnm';
 $lotyniskosRaidesIlgis = strlen($lotyniskosRaides) - 1;
-echo $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)] . $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)] . $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)];;
+echo $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)] . $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)] . $lotyniskosRaides[rand(0, $lotyniskosRaidesIlgis)];
 ?>
 
 <h2>ND nr.11</h2>
